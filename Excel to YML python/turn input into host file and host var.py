@@ -72,6 +72,28 @@ for column in range(2,columns_i_want+1):
 
 
 #pprint (devices)
+routers = []
+switches = []
 
 for device in devices:
     make_host_vars_file(device, rows)
+    if 'switch' in device['switch_or_router']:
+        switches.append(device['hostname'])
+    if 'router' in device['switch_or_router']:
+        routers.append(device['hostname'])
+
+hosts_string = '[switchs]\n'
+for switch in switches:
+    hosts_string = hosts_string+ switch+"\n"
+
+hosts_string = hosts_string+ "[routers]"+"\n"
+
+for router in routers:
+    hosts_string = hosts_string+ router+"\n"
+
+to_doc_w(hosts_file,hosts_string)
+
+
+
+
+
