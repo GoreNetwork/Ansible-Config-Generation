@@ -1,0 +1,13 @@
+---
+hostname: The_ted_thing
+data_vlan: 10
+vlans:
+  - number: 501
+    name: bob
+  - number: 66
+    name: ted
+NAC: True
+CCA: False
+device_type: switch
+model: 3750_switch.j2
+location: Other.j2

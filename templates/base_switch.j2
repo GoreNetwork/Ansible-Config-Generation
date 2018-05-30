@@ -1,0 +1,49 @@
+!
+!
+hostname {{hostname}}
+!
+This is a base switch config here.
+
+{% if l2_l3 == "L2" %}
+ip default_gateway {{dfgw}} {{dfgws_snm}}
+{% endif %}
+
+
+vlan {{data_vlan}}
+name DATA_VLAN
+
+
+{% if management_vlan != False %}
+vlan {{management_vlan}}
+name MANAGMENT
+{% endif %}
+
+{% if voice_vlan != False %}
+vlan {{voice_vlan}}
+name VOICE_VLAN
+{% endif %}
+
+{% if guest_vlan != False %}
+vlan {{guest_vlan}}
+name GUEST_VLAN
+{% endif %}
+
+
+
+
+!
+{% include hardware_type %}
+
+!
+{% if cca == True %}
+{% include "CCA.j2"%}
+{% endif %}
+!
+{% if cca == False %}
+{% include "Non_CCA.j2"%}
+{% endif %}
+
+{% include region %}
+
+
+

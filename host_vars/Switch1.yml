@@ -1,0 +1,19 @@
+---
+switch_or_router: switch
+region: Carolinas_West.j2
+management: DATA
+l2_l3: L2
+dfgw: 10.0.0.1
+dfgws_snm: 255.255.255.0
+routing_protocol: False
+l3_eigrp-as_ospf_area: False
+nac: True
+hardware_type: WS-C3650-24PD-S.j2
+stp_priority: 32768
+uplink1_hostname: False
+management_vlan: 60
+voice_vlan: 20
+data_vlan: 700
+guest_vlan: False
+hostname: Switch1
+cca: False

@@ -1,0 +1,19 @@
+copy scp://{{IOS_SCP_server}}/{{IOS_WS_C3650_24PD_S}} flash:/{{IOS_WS_C3650_24PD_S}}
+
+vlans in use:
+
+{{data_vlan}}: DATA_VLAN
+
+{% if management_vlan != False %}
+{{management_vlan}}: MANAGMENT
+{% endif %}
+
+{% if voice_vlan != False %}
+{{voice_vlan}}: VOICE_VLAN
+{% endif %}
+
+{% if guest_vlan != False %}
+{{guest_vlan}}: GUEST_VLAN
+{% endif %}
+
+dfgw: {{dfgw}} {{dfgws_snm}}

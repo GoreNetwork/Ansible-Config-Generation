@@ -1,0 +1,31 @@
+!
+!
+!
+{% for vlan in vlans %}
+vlan {{vlan.number}}
+name {{vlan.name}}
+{% endfor %}
+!
+int gi1/0/1
+switchport access vlan {{data_vlan}}
+{% if NAC == True %}
+nac_config_here
+{% endif %}
+!
+int gi1/0/2
+switchport access vlan {{data_vlan}}
+{% if NAC == True %}
+nac_config_here
+{% endif %}
+!
+int gi1/0/3
+switchport access vlan {{data_vlan}}
+{% if NAC == True %}
+nac_config_here
+{% endif %}
+!
+int gi1/0/4
+switchport access vlan {{data_vlan}}
+{% if NAC == True %}
+nac_config_here
+{% endif %}

@@ -1,0 +1,15 @@
+{% block OSPF %}
+
+OSPF stuff here {{hostname}}
+
+{% endblock %}
+
+
+{% if CCA == True %}
+{% extends "CCA.j2"%}
+{% endif %}
+
+
+{% if CCA == False %}
+{% extends "Non_CCA.j2"%}
+{% endif %}
